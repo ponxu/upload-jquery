@@ -14,6 +14,7 @@
 		dataType: 'json',
 		params: {},
 		onSend: noop,
+		onSubmit: noop,
 		onComplate: noop
 	};
 
@@ -42,6 +43,8 @@
 
 		iframe.appendTo("body");
 		form.appendTo("body");
+		
+		form.submit(opts.onSubmit);
 		
 		// iframe 在提交完成之后
 		iframe.load(function() {

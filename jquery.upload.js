@@ -51,7 +51,7 @@
 			var contents = $(this).contents().get(0);
 			var data = $(contents).find('body').text();
 			if ('json' == opts.dataType) {
-				data = window.eval('(' + data + ')');
+				data = JSON.parse(data);
 			}
 			opts.onComplete(data);
 			setTimeout(function() {

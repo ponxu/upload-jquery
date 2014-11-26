@@ -2,6 +2,7 @@ jquery async upload plugin
 easy to use
 
     // 上传方法
+```javascript
 	$.upload({
 			// 上传地址
 			url: '/admin/upload', 
@@ -16,7 +17,8 @@ easy to use
 					return true;
 			},
 			// 上传之后回调
-			onComplate: function(data) {
+			onComplete: function(data) {
 					alert(data);
 			}
 	});
+```

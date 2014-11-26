@@ -20,7 +20,7 @@
 
 	$.upload = function(options) {
 		var opts = $.extend(jQuery.uploadDefault, options);
-		if (opts.url == '') {
+		if (!opts.url) {
 			return;
 		}
 		
@@ -36,7 +36,7 @@
 		
 		// form中增加数据域
 		var formHtml = '<input type="file" name="' + opts.fileName + '" onchange="onChooseFile(this)">';
-		for (key in opts.params) {
+		for (var key in opts.params) {
 			formHtml += '<input type="hidden" name="' + key + '" value="' + opts.params[key] + '">';
 		}
 		form.append(formHtml);
@@ -47,7 +47,7 @@
 		form.submit(opts.onSubmit);
 		
 		// iframe 在提交完成之后
-		iframe.load(function() {
+		iframe.on('load', function() {
 			var contents = $(this).contents().get(0);
 			var data = $(contents).find('body').text();
 			if ('json' == opts.dataType) {

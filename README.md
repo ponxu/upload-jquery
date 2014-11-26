@@ -16,7 +16,7 @@ easy to use
 					return true;
 			},
 			// 上传之后回调
-			onComplate: function(data) {
+			onComplete: function(data) {
 					alert(data);
 			}
 	});

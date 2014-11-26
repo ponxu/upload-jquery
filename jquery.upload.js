@@ -15,7 +15,7 @@
 		params: {},
 		onSend: noop,
 		onSubmit: noop,
-		onComplate: noop
+		onComplete: noop
 	};
 
 	$.upload = function(options) {
@@ -53,7 +53,7 @@
 			if ('json' == opts.dataType) {
 				data = window.eval('(' + data + ')');
 			}
-			opts.onComplate(data);
+			opts.onComplete(data);
 			setTimeout(function() {
 				iframe.remove();
 				form.remove();
